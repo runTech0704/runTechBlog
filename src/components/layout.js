@@ -24,7 +24,8 @@ const Layout = ({ location, title, children }) => {
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>
       <main>{children}</main>
-      <footer>
+      <footer style={{ textAlign: "center", padding: "1rem" }}>
+        <img src="/runtech-logo.png" alt="Footer Image" style={{ maxWidth: "250px" }} />
       </footer>
     </div>
   )
