@@ -65,7 +65,7 @@ const BlogIndex = ({ data, location }) => {
       {/* お問い合わせセクション */}
       <div className="container">
         <h1>Contact Form</h1>
-        <form name="contact" netlify>
+        <form name="contact" method="POST" netlify>
           <p>
             <label>Name <input type="text" name="name" placeholder="お名前を入力してください" /></label>
           </p>
