@@ -24,7 +24,8 @@ const Layout = ({ location, title, children }) => {
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>
       <main>{children}</main>
-      <footer style={{ textAlign: "center", padding: "1rem" }}>
+      <footer style={{ textAlign: "center", padding: "1rem", display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <a href="/privacy-policy" style={{ marginBottom: "1rem" }}>プライバシーポリシー</a>
         <img src="/runtech-logo.png" alt="Footer Image" style={{ maxWidth: "250px" }} />
       </footer>
     </div>
