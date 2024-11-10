@@ -58,6 +58,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-feed`,
