@@ -45,6 +45,7 @@ const Seo = ({ description, title, children }) => {
       <meta name="twitter:description" content={metaDescription} />
       <Helmet>
         <link rel="icon" href="/runtech-favicon.png" type="image/type" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6553487911183939" crossorigin="anonymous"></script>
       </Helmet>
       {children}
     </>
