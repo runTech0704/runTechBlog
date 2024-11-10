@@ -1,0 +1,86 @@
+/* src/styles/blog-index.css */
+
+/* 共通コンテナスタイル */
+.container {
+    max-width: 600px;
+    margin: 12px ; /* 上下の余白を縮小 */
+    padding: 1rem; /* 内部のパディングを縮小 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: left;
+  }
+
+  /* タイトル */
+  .container h1,
+  .container h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.75rem; /* タイトルの下の余白を縮小 */
+  }
+
+  /* ブログ一覧スタイル */
+  .blog-list-item {
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0.75rem; /* 各ブログ項目の間隔を狭く */
+  }
+
+  .blog-list-item:last-child {
+    border-bottom: none; /* 最後の要素にボーダーが表示されないように */
+  }
+
+  .blog-list-item h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #007acc;
+    margin-bottom: 0.25rem; /* 見出し下の余白を縮小 */
+  }
+
+  .blog-list-item h2 a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .blog-list-item p {
+    margin-top: 0.25rem;
+    color: #555;
+  }
+
+  .blog-list-item small {
+    font-size: 0.875rem;
+    color: #777;
+  }
+
+
+  /* フォームラベルとフィールドの間隔を縮小 */
+  form p {
+    margin-bottom: 0.5rem; /* フォームの項目間の間隔を狭く */
+  }
+
+  form label {
+    font-weight: bold;
+  }
+
+  form input,
+  form textarea {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 100%;
+    margin-top: 0.25rem; /* 入力フィールドとの間隔を狭く */
+  }
+
+  form button {
+    padding: 0.75rem;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  form button:hover {
+    background-color: #005f99;
+  }
