@@ -25,9 +25,13 @@ const Layout = ({ location, title, children }) => {
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer style={{ textAlign: "center", padding: "1rem", display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <a href="/privacy-policy" style={{ marginBottom: "1rem" }}>プライバシーポリシー</a>
+        <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
+          <a href="/privacy-policy">プライバシーポリシー</a>
+          <a href="/about-me">About Me</a>
+        </div>
         <img src="/runtech-logo.png" alt="Footer Image" style={{ maxWidth: "250px" }} />
       </footer>
+
     </div>
   )
 }
