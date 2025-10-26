@@ -2,40 +2,85 @@
 
 /* 共通コンテナスタイル */
 .container {
-    max-width: 600px;
-    margin: 12px ; /* 上下の余白を縮小 */
-    padding: 1rem; /* 内部のパディングを縮小 */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+    max-width: 100%;
+    margin: 2rem 0;
+    padding: 2rem;
+    border: 1px solid rgba(64, 64, 64, 0.3);
+    border-radius: 1rem;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(37, 37, 37, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
     text-align: left;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .container:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
   }
 
   /* タイトル */
   .container h1,
   .container h5 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 0.75rem; /* タイトルの下の余白を縮小 */
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #d4af37 0%, #e6c85a 50%, #c0c0c0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
   }
 
   /* ブログ一覧スタイル */
   .blog-list-item {
-    padding: 0.75rem;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 0.75rem; /* 各ブログ項目の間隔を狭く */
+    padding: 1.5rem;
+    border: 1px solid rgba(64, 64, 64, 0.3);
+    border-radius: 0.75rem;
+    margin-bottom: 1.25rem;
+    background: linear-gradient(135deg, rgba(37, 37, 37, 0.6) 0%, rgba(45, 45, 45, 0.6) 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-list-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #d4af37, #e6c85a, #c0c0c0);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .blog-list-item:hover::before {
+    opacity: 1;
+  }
+
+  .blog-list-item:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(212, 175, 55, 0.3);
+    background: linear-gradient(135deg, rgba(37, 37, 37, 0.8) 0%, rgba(45, 45, 45, 0.8) 100%);
   }
 
   .blog-list-item:last-child {
-    border-bottom: none; /* 最後の要素にボーダーが表示されないように */
+    border-bottom: none;
   }
 
   .blog-list-item h2 {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #007acc;
-    margin-bottom: 0.25rem; /* 見出し下の余白を縮小 */
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .blog-list-item:hover h2 {
+    color: #d4af37;
   }
 
   .blog-list-item h2 a {
@@ -44,43 +89,89 @@
   }
 
   .blog-list-item p {
-    margin-top: 0.25rem;
-    color: #555;
+    margin-top: 0.5rem;
+    color: #a8a8a8;
+    line-height: 1.6;
   }
 
   .blog-list-item small {
     font-size: 0.875rem;
-    color: #777;
+    color: #8b7355;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .blog-list-item small::before {
+    content: '📅';
   }
 
 
-  /* フォームラベルとフィールドの間隔を縮小 */
+  /* フォームスタイル */
   form p {
-    margin-bottom: 0.5rem; /* フォームの項目間の間隔を狭く */
+    margin-bottom: 1.5rem;
   }
 
   form label {
-    font-weight: bold;
+    font-weight: 600;
+    color: #e5e5e5;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
   }
 
   form input,
   form textarea {
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #ddd;
+    padding: 0.875rem 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid rgba(64, 64, 64, 0.5);
     width: 100%;
-    margin-top: 0.25rem; /* 入力フィールドとの間隔を狭く */
+    margin-top: 0.25rem;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    background: rgba(37, 37, 37, 0.6);
+    color: #e5e5e5;
+  }
+
+  form input:focus,
+  form textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+    background: rgba(37, 37, 37, 0.8);
+  }
+
+  form input:hover,
+  form textarea:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    background: rgba(37, 37, 37, 0.7);
+  }
+
+  form textarea {
+    resize: vertical;
+    min-height: 120px;
   }
 
   form button {
-    padding: 0.75rem;
-    background-color: #007acc;
-    color: white;
+    padding: 0.875rem 2rem;
+    background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+    color: #1a1a1a;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.5rem;
     cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
   }
 
   form button:hover {
-    background-color: #005f99;
+    background: linear-gradient(135deg, #e6c85a 0%, #d4af37 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+  }
+
+  form button:active {
+    transform: translateY(0);
   }
