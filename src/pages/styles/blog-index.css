@@ -2,40 +2,85 @@
 
 /* 共通コンテナスタイル */
 .container {
-    max-width: 600px;
-    margin: 12px ; /* 上下の余白を縮小 */
-    padding: 1rem; /* 内部のパディングを縮小 */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+    max-width: 100%;
+    margin: 2rem 0;
+    padding: 2rem;
+    border: none;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.02);
     text-align: left;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .container:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(59, 130, 246, 0.1);
+    transform: translateY(-2px);
   }
 
   /* タイトル */
   .container h1,
   .container h5 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 0.75rem; /* タイトルの下の余白を縮小 */
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
   }
 
   /* ブログ一覧スタイル */
   .blog-list-item {
-    padding: 0.75rem;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 0.75rem; /* 各ブログ項目の間隔を狭く */
+    padding: 1.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    margin-bottom: 1.25rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(249, 250, 251, 0.8) 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-list-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .blog-list-item:hover::before {
+    opacity: 1;
+  }
+
+  .blog-list-item:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.95) 100%);
   }
 
   .blog-list-item:last-child {
-    border-bottom: none; /* 最後の要素にボーダーが表示されないように */
+    border-bottom: none;
   }
 
   .blog-list-item h2 {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #007acc;
-    margin-bottom: 0.25rem; /* 見出し下の余白を縮小 */
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .blog-list-item:hover h2 {
+    color: #3b82f6;
   }
 
   .blog-list-item h2 a {
@@ -44,43 +89,86 @@
   }
 
   .blog-list-item p {
-    margin-top: 0.25rem;
-    color: #555;
+    margin-top: 0.5rem;
+    color: #6b7280;
+    line-height: 1.6;
   }
 
   .blog-list-item small {
     font-size: 0.875rem;
-    color: #777;
+    color: #9ca3af;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .blog-list-item small::before {
+    content: '📅';
   }
 
 
-  /* フォームラベルとフィールドの間隔を縮小 */
+  /* フォームスタイル */
   form p {
-    margin-bottom: 0.5rem; /* フォームの項目間の間隔を狭く */
+    margin-bottom: 1.5rem;
   }
 
   form label {
-    font-weight: bold;
+    font-weight: 600;
+    color: #374151;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
   }
 
   form input,
   form textarea {
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #ddd;
+    padding: 0.875rem 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid #e5e7eb;
     width: 100%;
-    margin-top: 0.25rem; /* 入力フィールドとの間隔を狭く */
+    margin-top: 0.25rem;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    background: white;
+  }
+
+  form input:focus,
+  form textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+
+  form input:hover,
+  form textarea:hover {
+    border-color: #d1d5db;
+  }
+
+  form textarea {
+    resize: vertical;
+    min-height: 120px;
   }
 
   form button {
-    padding: 0.75rem;
-    background-color: #007acc;
+    padding: 0.875rem 2rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.5rem;
     cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
   }
 
   form button:hover {
-    background-color: #005f99;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+  }
+
+  form button:active {
+    transform: translateY(0);
   }
